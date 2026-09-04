@@ -1,0 +1,27 @@
+name: ai_robot_pro_v2
+description: AI Robot PRO v2 - Personal AI assistant for Android.
+publish_to: "none"
+version: 2.0.0+1
+
+environment:
+  sdk: ">=3.10.0 <4.0.0"
+
+dependencies:
+  flutter:
+    sdk: flutter
+  camera: ^0.11.0+2
+  speech_to_text: ^7.4.0
+  flutter_tts: ^4.2.0
+  shared_preferences: ^2.5.3
+  http: ^1.4.0
+  model_viewer_plus: ^1.9.3
+  android_intent_plus: 5.3.1
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/robot/
