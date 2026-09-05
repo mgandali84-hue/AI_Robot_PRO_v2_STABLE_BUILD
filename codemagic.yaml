@@ -21,6 +21,15 @@ workflows:
         script: |
           flutter analyze
 
+  - name: Check Flutter
+    script: |
+      flutter --version
+      dart --version
+
+  - name: Get packages
+    script: |
+      flutter pub get
+
       - name: Build APK
         script: |
           flutter build apk --release
