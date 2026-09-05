@@ -1,5 +1,6 @@
 workflows:
   android-release:
+
     name: AI Robot PRO v2 - Android Release APK
 
     max_build_duration: 60
@@ -10,23 +11,25 @@ workflows:
 
     scripts:
 
-      - name: Check Flutter Version
+      - name: Check Environment
         script: |
           flutter --version
           dart --version
+          java -version
 
-      - name: Clean Project
+      - name: Clean Flutter and Gradle
         script: |
           flutter clean
           rm -rf android/.gradle
           rm -rf ~/.gradle/caches
-          rm -rf ~/.pub-cache
+          rm -rf ~/.gradle/wrapper
+          rm -rf build
 
       - name: Get Packages
         script: |
           flutter pub get
 
-      - name: Analyze Project
+      - name: Analyze
         script: |
           flutter analyze
 
