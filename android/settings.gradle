@@ -23,3 +23,7 @@ plugins {
 }
 
 include ":app"
+
+gradle.beforeProject { project ->
+    project.ext.set("flutter.compileSdkVersion", 36)
+}
