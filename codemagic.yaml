@@ -1,9 +1,3 @@
-- name: Reset Gradle
-  script: |
-    flutter clean
-    rm -rf android/.gradle
-    rm -rf ~/.gradle/caches
-
 workflows:
   android-release:
     name: AI Robot PRO v2 - Android Release APK
@@ -26,12 +20,13 @@ workflows:
           flutter clean
           rm -rf android/.gradle
           rm -rf ~/.gradle/caches
+          rm -rf ~/.pub-cache
 
       - name: Get Packages
         script: |
           flutter pub get
 
-      - name: Analyze
+      - name: Analyze Project
         script: |
           flutter analyze
 
